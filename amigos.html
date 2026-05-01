@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zona de amigos — Zenit</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="css/friends.css" />
+</head>
+<body>
+
+  <!-- CURSOR -->
+  <div id="cursor">
+    <div id="cursor-dot"></div>
+    <div id="cursor-ring"></div>
+  </div>
+
+  <!-- BG -->
+  <div class="friends-bg"></div>
+
+  <!-- BACK -->
+  <a href="index.html" class="back-link">
+    <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+    Volver al inicio
+  </a>
+
+  <!-- PAGE -->
+  <div class="friends-page">
+    <div class="friends-card">
+
+      <div class="friends-header">
+        <div class="friends-sigil">
+          <svg viewBox="0 0 24 24">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+            <circle cx="9" cy="7" r="4"/>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+          </svg>
+        </div>
+        <h1 class="friends-title">Zona de amigos</h1>
+        <p class="friends-subtitle">// acceso restringido · solo invitados</p>
+      </div>
+
+      <form class="friends-form" id="friends-form" autocomplete="off">
+        <div class="f-group">
+          <label for="friends-user">Usuario</label>
+          <input
+            type="text"
+            id="friends-user"
+            name="friends-user"
+            autocomplete="off"
+            placeholder="tu nombre"
+            spellcheck="false"
+          />
+        </div>
+        <div class="f-group">
+          <label for="friends-pass">Contraseña</label>
+          <input
+            type="password"
+            id="friends-pass"
+            name="friends-pass"
+            autocomplete="off"
+            placeholder="········"
+          />
+        </div>
+        <div class="friends-error" id="friends-error"></div>
+        <button type="submit" class="friends-submit" id="friends-btn">Entrar</button>
+      </form>
+
+      <p class="friends-hint">¿No tienes acceso? Pídelo a Zenit directamente.</p>
+
+    </div>
+  </div>
+
+  <script>
+    /* Cursor JS inline para no depender de main.js */
+    const dot  = document.getElementById('cursor-dot');
+    const ring = document.getElementById('cursor-ring');
+    let mx=0,my=0,rx=0,ry=0;
+    document.addEventListener('mousemove', e=>{mx=e.clientX;my=e.clientY;});
+    function anim(){
+      dot.style.left=mx+'px'; dot.style.top=my+'px';
+      rx+=(mx-rx)*0.12; ry+=(my-ry)*0.12;
+      ring.style.left=rx+'px'; ring.style.top=ry+'px';
+      requestAnimationFrame(anim);
+    }
+    anim();
+  </script>
+  <script src="js/friends.js"></script>
+</body>
+</html>

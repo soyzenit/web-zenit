@@ -1,0 +1,205 @@
+/* friends.css — Estilos para la página de acceso de amigos */
+
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=JetBrains+Mono:wght@400;500&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --white: #f8f6ff;
+  --p200: #d9b8ff;
+  --p400: #a855f7;
+  --p500: #9333ea;
+  --p600: #7e22ce;
+  --p700: #6b21a8;
+  --p900: #1a0533;
+  --dark: #0a0212;
+  --dark2: #0f0320;
+  --glass: rgba(255,255,255,0.04);
+  --glass-border: rgba(168,85,247,0.2);
+  --glow-sm: 0 0 16px rgba(168,85,247,0.3);
+  --font-display: 'Syne', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+html, body {
+  height: 100%;
+  font-family: var(--font-body);
+  background: var(--dark);
+  color: var(--white);
+  overflow-x: hidden;
+  cursor: none;
+}
+
+::selection { background: var(--p500); color: #fff; }
+a { color: inherit; text-decoration: none; }
+
+/* ── CURSOR ── */
+#cursor { position: fixed; top: 0; left: 0; z-index: 9999; pointer-events: none; }
+#cursor-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--p400); position: absolute;
+  transform: translate(-50%,-50%); box-shadow: var(--glow-sm);
+}
+#cursor-ring {
+  width: 36px; height: 36px; border-radius: 50%;
+  border: 1.5px solid rgba(168,85,247,0.5);
+  position: absolute; transform: translate(-50%,-50%);
+  transition: width 0.25s, height 0.25s, border-color 0.25s;
+}
+body:has(a:hover) #cursor-ring,
+body:has(button:hover) #cursor-ring {
+  width: 54px; height: 54px;
+  border-color: var(--p400);
+  background: rgba(168,85,247,0.08);
+}
+
+/* ── NOISE ── */
+body::before {
+  content: ''; position: fixed; inset: 0; z-index: 0; opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  pointer-events: none;
+}
+
+/* ── BG ── */
+.friends-bg {
+  position: fixed; inset: 0; z-index: 0;
+  background:
+    radial-gradient(ellipse 60% 50% at 30% 20%, rgba(147,51,234,0.15) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 40% at 80% 80%, rgba(168,85,247,0.08) 0%, transparent 60%),
+    var(--dark);
+}
+
+/* ── LAYOUT ── */
+.friends-page {
+  position: relative; z-index: 1;
+  min-height: 100vh;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  padding: 40px 24px;
+}
+
+/* ── BACK LINK ── */
+.back-link {
+  position: fixed; top: 28px; left: 36px; z-index: 100;
+  font-family: var(--font-mono); font-size: 0.75rem;
+  color: rgba(255,255,255,0.35); letter-spacing: 0.08em;
+  display: flex; align-items: center; gap: 8px;
+  transition: color 0.2s;
+}
+.back-link:hover { color: var(--p200); }
+.back-link svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+/* ── CARD ── */
+.friends-card {
+  width: 100%; max-width: 440px;
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  padding: 48px 40px;
+  backdrop-filter: blur(20px);
+  animation: cardIn 0.6s cubic-bezier(0.16,1,0.3,1) both;
+}
+@keyframes cardIn {
+  from { opacity: 0; transform: translateY(24px) scale(0.98); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* ── HEADER ── */
+.friends-header { text-align: center; margin-bottom: 40px; }
+.friends-sigil {
+  width: 64px; height: 64px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--p700), var(--p900));
+  border: 1px solid rgba(168,85,247,0.35);
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 20px;
+  position: relative;
+}
+.friends-sigil::after {
+  content: ''; position: absolute; inset: -4px; border-radius: 50%;
+  border: 1px dashed rgba(168,85,247,0.25);
+  animation: spin 15s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+.friends-sigil svg { width: 28px; height: 28px; stroke: var(--p400); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+
+.friends-title {
+  font-family: var(--font-display);
+  font-size: 1.6rem; font-weight: 800; letter-spacing: -0.03em;
+  background: linear-gradient(135deg, #fff 30%, var(--p400));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  margin-bottom: 8px;
+}
+.friends-subtitle {
+  font-family: var(--font-mono); font-size: 0.72rem;
+  color: rgba(255,255,255,0.3); letter-spacing: 0.08em;
+}
+
+/* ── FORM ── */
+.friends-form { display: flex; flex-direction: column; gap: 18px; }
+.f-group { display: flex; flex-direction: column; gap: 8px; }
+.f-group label {
+  font-family: var(--font-mono); font-size: 0.68rem;
+  color: var(--p400); letter-spacing: 0.12em; text-transform: uppercase;
+}
+.f-group input {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--glass-border);
+  border-radius: 10px; padding: 13px 16px;
+  color: var(--white); font-family: var(--font-body); font-size: 0.92rem; font-weight: 300;
+  outline: none; transition: border-color 0.2s, box-shadow 0.2s;
+  cursor: none;
+}
+.f-group input:focus {
+  border-color: var(--p500); box-shadow: 0 0 0 3px rgba(147,51,234,0.1);
+}
+.f-group input.shake {
+  animation: shake 0.4s ease;
+}
+@keyframes shake {
+  0%,100% { transform: translateX(0); }
+  20% { transform: translateX(-6px); }
+  40% { transform: translateX(6px); }
+  60% { transform: translateX(-4px); }
+  80% { transform: translateX(4px); }
+}
+
+/* ── ERROR ── */
+.friends-error {
+  display: none;
+  font-family: var(--font-mono); font-size: 0.75rem;
+  color: #f87171; letter-spacing: 0.05em;
+  background: rgba(248,113,113,0.06);
+  border: 1px solid rgba(248,113,113,0.2);
+  border-radius: 8px; padding: 10px 14px;
+  text-align: center;
+}
+
+/* ── SUBMIT ── */
+.friends-submit {
+  padding: 14px; border-radius: 10px;
+  background: linear-gradient(135deg, var(--p500), var(--p600));
+  color: #fff; font-family: var(--font-display); font-weight: 700; font-size: 0.92rem;
+  border: none; cursor: none; letter-spacing: 0.02em;
+  box-shadow: 0 4px 24px rgba(147,51,234,0.35);
+  transition: transform 0.2s, box-shadow 0.2s, opacity 0.2s;
+  position: relative; overflow: hidden;
+}
+.friends-submit::before {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.08), transparent);
+  opacity: 0; transition: opacity 0.2s;
+}
+.friends-submit:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(147,51,234,0.5); }
+.friends-submit:hover::before { opacity: 1; }
+
+/* ── FOOTER HINT ── */
+.friends-hint {
+  text-align: center; margin-top: 28px;
+  font-family: var(--font-mono); font-size: 0.68rem;
+  color: rgba(255,255,255,0.2); letter-spacing: 0.06em;
+}
+
+@media (max-width: 480px) {
+  .friends-card { padding: 36px 24px; }
+}

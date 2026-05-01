@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zenit — soyzenitt.es</title>
+  <meta name="description" content="Zenit. Builder de comunidades, moderador, desarrollador web. Presencia digital con identidad propia." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- CURSOR -->
+  <div id="cursor">
+    <div id="cursor-dot"></div>
+    <div id="cursor-ring"></div>
+  </div>
+
+  <!-- NAV -->
+  <nav id="nav">
+    <div class="nav-logo">Zenit</div>
+    <div class="nav-links" id="nav-links">
+      <a href="#about">Sobre mí</a>
+      <a href="#services">Servicios</a>
+      <a href="#world">Mi mundo</a>
+      <a href="#experience">Experiencia</a>
+      <a href="amigos.html" style="color:rgba(244,114,182,0.7);border:1px solid rgba(244,114,182,0.2);padding:8px 16px;border-radius:6px;font-size:0.78rem;transition:color 0.2s,border-color 0.2s,background 0.2s;" onmouseover="this.style.color='#f472b6';this.style.borderColor='rgba(244,114,182,0.5)';this.style.background='rgba(244,114,182,0.06)'" onmouseout="this.style.color='rgba(244,114,182,0.7)';this.style.borderColor='rgba(244,114,182,0.2)';this.style.background='transparent'">Amigos</a>
+      <a href="#contact" class="nav-cta">Contacto</a>
+    </div>
+    <button class="nav-burger" id="nav-burger" aria-label="Menú" style="background:none;border:none;">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-bg"></div>
+    <canvas id="particles-canvas"></canvas>
+    <div class="hero-content">
+      <div class="hero-badge">Disponible para proyectos</div>
+      <h1 class="hero-title"><span>Zenit</span></h1>
+      <p class="hero-tagline">Construyo presencia. Construyo comunidades.</p>
+      <p class="hero-sub">
+        No soy solo otro perfil en internet. Soy la persona que toma lo digital en serio — 
+        diseño webs que impactan, gestiono comunidades que funcionan y dejo huella donde aparezco.
+      </p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">Hablemos →</a>
+        <a href="#services" class="btn-ghost">Ver servicios</a>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span>SCROLL</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <div class="gradient-line"></div>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-visual reveal">
+          <div class="about-avatar-wrap">
+            <div class="about-avatar-bg"></div>
+            <div class="about-avatar-ring"></div>
+            <div class="about-avatar-inner"></div>
+          </div>
+          <div class="about-stats">
+            <div class="stat-card">
+              <div class="stat-num">+6</div>
+              <div class="stat-label">años activo</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-num">∞</div>
+              <div class="stat-label">horas online</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-num">10k+</div>
+              <div class="stat-label">usuarios gestionados</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-num">100%</div>
+              <div class="stat-label">presencia digital</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-text reveal">
+          <div class="section-label">Sobre mí</div>
+          <h2 class="section-title">Nativa <em>digital</em>.<br>De las que saben.</h2>
+          <p>
+            Internet no es solo una herramienta para mí — es mi ecosistema. 
+            Crecí aquí, entendí cómo funciona la cultura online desde dentro, y aprendí que 
+            <strong>las comunidades son organismos vivos</strong> que necesitan más que reglas: necesitan identidad.
+          </p>
+          <p>
+            Me llamo Zenit. Construyo espacios digitales con estructura y con alma. 
+            Cuando modera, no solo aplica normas — <strong>crea cultura</strong>. 
+            Cuando diseña webs, no entrega páginas — <strong>entrega presencia</strong>.
+          </p>
+          <p>
+            La ambición me mueve. No me conformo con "suficiente". 
+            Cada proyecto que toco tiene que ser mejor que el anterior, 
+            porque en internet mediocre = invisible.
+          </p>
+          <div class="about-tags">
+            <span class="tag">Discord</span>
+            <span class="tag">Community Building</span>
+            <span class="tag">Web Design</span>
+            <span class="tag">Moderation</span>
+            <span class="tag">Internet Culture</span>
+            <span class="tag">Growth</span>
+            <span class="tag">Branding</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="gradient-line"></div>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="container">
+      <div class="reveal">
+        <div class="section-label">Qué hago</div>
+        <h2 class="section-title">Servicios con <em>nivel</em></h2>
+        <p style="max-width:540px;color:rgba(255,255,255,0.5);font-weight:300;line-height:1.8;font-size:0.95rem;">
+          No hago las cosas a medias. Cada servicio está pensado para dejar un impacto real 
+          en tu comunidad o en tu presencia online.
+        </p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card reveal">
+          <div class="service-icon">
+            <!-- Shield icon -->
+            <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3 class="service-title">Moderación de Discord</h3>
+          <p class="service-desc">Moderación profesional que va más allá de banear cuentas. Construyo entornos sanos donde la gente quiere quedarse.</p>
+          <ul class="service-features">
+            <li>Configuración de bots avanzada</li>
+            <li>Sistemas antiabuso y antispam</li>
+            <li>Gestión de conflictos</li>
+            <li>Roles y estructura de servidor</li>
+          </ul>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon">
+            <!-- Globe icon -->
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          </div>
+          <h3 class="service-title">Páginas Web</h3>
+          <p class="service-desc">Webs con identidad real. No plantillas genéricas — diseños únicos que reflejan quién eres y convierten visitas en acción.</p>
+          <ul class="service-features">
+            <li>Landing pages &amp; portfolios</li>
+            <li>Diseño UI/UX moderno</li>
+            <li>Optimización de rendimiento</li>
+            <li>Animaciones &amp; microinteracciones</li>
+          </ul>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon">
+            <!-- Users icon -->
+            <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3 class="service-title">Gestión de Comunidades</h3>
+          <p class="service-desc">Una comunidad sin gestión es ruido. Con la gestión correcta es un activo que crece solo. Ahí es donde entro yo.</p>
+          <ul class="service-features">
+            <li>Estrategia de engagement</li>
+            <li>Creación de dinámicas y eventos</li>
+            <li>Onboarding de nuevos miembros</li>
+            <li>Cultura y valores de comunidad</li>
+          </ul>
+        </div>
+        <div class="service-card reveal">
+          <div class="service-icon">
+            <!-- Settings icon -->
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+          </div>
+          <h3 class="service-title">Setup de Servidor</h3>
+          <p class="service-desc">Construyo servidores de Discord desde cero — arquitectura, canales, permisos, bots. Listos para escalar.</p>
+          <ul class="service-features">
+            <li>Diseño de estructura completa</li>
+            <li>Integración de bots personalizados</li>
+            <li>Automatizaciones y workflows</li>
+            <li>Sistemas de verificación</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="gradient-line"></div>
+
+  <!-- MI MUNDO -->
+  <section id="world">
+    <div class="container">
+      <div class="reveal">
+        <div class="section-label">Mi mundo</div>
+        <h2 class="section-title">Lo que me <em>define</em></h2>
+        <p style="max-width:500px;color:rgba(255,255,255,0.5);font-weight:300;line-height:1.8;font-size:0.95rem;">
+          Más allá del trabajo. Aquí es donde vivo digitalmente.
+        </p>
+      </div>
+      <div class="world-grid">
+
+        <!-- Projects status -->
+        <div class="world-card wc-1 reveal">
+          <div class="world-card-label">// estado actual</div>
+          <div class="world-card-title">Proyectos activos</div>
+          <div class="status-list">
+            <div class="status-item">
+              <span>Moderación RickyEdit</span>
+              <span class="status-badge s-active">activo</span>
+            </div>
+            <div class="status-item">
+              <span>Servidor Pereira</span>
+              <span class="status-badge s-active">activo</span>
+            </div>
+            <div class="status-item">
+              <span>Nuevos proyectos web</span>
+              <span class="status-badge s-building">en marcha</span>
+            </div>
+            <div class="status-item">
+              <span>Brand propio → soyzenitt.es</span>
+              <span class="status-badge s-active">online</span>
+            </div>
+            <div class="status-item">
+              <span>Próxima comunidad</span>
+              <span class="status-badge s-idea">planeando</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Terminal -->
+        <div class="world-card wc-2 reveal">
+          <div class="world-card-label">// terminal</div>
+          <div class="terminal-body">
+            <div class="terminal-line"><span class="t-prompt">zenit@net</span><span class="t-cmd">:~ $ whoami</span></div>
+            <div class="terminal-line"><span class="t-out">community builder, web dev, mod pro</span></div>
+            <div class="terminal-line"><span class="t-prompt">zenit@net</span><span class="t-cmd">:~ $ skills --list</span></div>
+            <div class="terminal-line"><span class="t-out">discord, css, js, community mgmt</span></div>
+            <div class="terminal-line"><span class="t-prompt">zenit@net</span><span class="t-cmd">:~ $ status</span></div>
+            <div class="terminal-line"><span class="t-out">online 24/7. always building.</span></div>
+            <div class="terminal-line"><span class="t-comment"># available for collab →</span></div>
+          </div>
+        </div>
+
+        <!-- Philosophy -->
+        <div class="world-card wc-3 reveal">
+          <div class="world-card-label">// filosofía</div>
+          <div class="world-card-title">Cómo pienso</div>
+          <div class="philosophy-quote">
+            "Internet premia a los que aparecen todos los días. Yo aparezco, y encima lo hago bien."
+          </div>
+        </div>
+
+        <!-- Interests -->
+        <div class="world-card wc-4 reveal">
+          <div class="world-card-label">// intereses</div>
+          <div class="world-card-title">En lo que vivo</div>
+          <div class="interests-list">
+            <span class="interest-item">Discord</span>
+            <span class="interest-item">Internet culture</span>
+            <span class="interest-item">UI Design</span>
+            <span class="interest-item">Community lore</span>
+            <span class="interest-item">Web dev</span>
+            <span class="interest-item">Digital branding</span>
+            <span class="interest-item">Growth</span>
+            <span class="interest-item">Automation</span>
+          </div>
+        </div>
+
+        <!-- Online hours -->
+        <div class="world-card wc-5 reveal">
+          <div class="world-card-label">// actividad</div>
+          <div class="world-card-title">Online</div>
+          <div class="hour-blocks" id="hour-blocks"></div>
+          <div class="hour-labels"><span>00h</span><span>12h</span><span>24h</span></div>
+        </div>
+
+        <!-- Internet presence -->
+        <div class="world-card wc-6 reveal">
+          <div class="world-card-label">// presencia</div>
+          <div class="world-card-title">Dónde estoy</div>
+          <p class="world-card-body" style="margin-bottom:14px;">
+            Principalmente en Discord, pero la presencia digital se extiende. 
+            Cada plataforma con su estrategia, cada comunidad con su voz.
+          </p>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;">
+            <div style="padding:8px 14px;border-radius:8px;background:rgba(88,101,242,0.1);border:1px solid rgba(88,101,242,0.2);font-family:var(--font-mono);font-size:0.75rem;color:#8b95f5;">Discord</div>
+            <div style="padding:8px 14px;border-radius:8px;background:rgba(168,85,247,0.08);border:1px solid rgba(168,85,247,0.15);font-family:var(--font-mono);font-size:0.75rem;color:var(--p200);">Web</div>
+          </div>
+        </div>
+
+        <!-- Mindset -->
+        <div class="world-card wc-7 reveal" style="background:linear-gradient(135deg,rgba(168,85,247,0.07),rgba(147,51,234,0.03));">
+          <div class="world-card-label">// mentalidad</div>
+          <div class="world-card-title">Lo que me mueve</div>
+          <p class="world-card-body">
+            No busco ser la más ruidosa. Busco ser la más consistente. 
+            Cada servidor que modera, cada web que diseño — deja algo que no tenía antes. 
+            Eso es lo que significa <strong style="color:var(--p200)">hacer internet mejor</strong>.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="gradient-line"></div>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="container">
+      <div class="reveal">
+        <div class="section-label">Experiencia</div>
+        <h2 class="section-title">Dónde he <em>dejado huella</em></h2>
+      </div>
+      <div class="exp-grid">
+
+        <div class="exp-card featured reveal">
+          <div class="exp-card-bg"></div>
+          <div class="exp-server">RickyEdit</div>
+          <div class="exp-role">Moderadora Senior</div>
+          <div class="exp-period">6 años · Servidor activo</div>
+          <p class="exp-desc">
+            Uno de los servidores más grandes de la comunidad creativa hispana. 
+            Gestión de un ecosistema de miles de miembros — desde resolución de conflictos 
+            hasta estructura de canales y cultura interna. No era solo moderar: era mantener vivo un espacio donde la gente se queda.
+          </p>
+          <div class="exp-impact">
+            <span class="impact-pill">Miles de usuarios</span>
+            <span class="impact-pill">Gestión de conflictos</span>
+            <span class="impact-pill">Cultura de servidor</span>
+            <span class="impact-pill">Coordinación de equipo</span>
+          </div>
+        </div>
+
+        <div class="exp-card reveal">
+          <div class="exp-card-bg"></div>
+          <div class="exp-server">Pereira</div>
+          <div class="exp-role">Moderadora</div>
+          <div class="exp-period">Largo plazo · Rol activo</div>
+          <p class="exp-desc">
+            Presencia clave en la gestión diaria del servidor. 
+            Aplicación de normativas, soporte a usuarios y mantenimiento del orden 
+            en una comunidad con actividad constante.
+          </p>
+          <div class="exp-impact">
+            <span class="impact-pill">Comunidad activa</span>
+            <span class="impact-pill">Soporte a usuarios</span>
+            <span class="impact-pill">Normativa</span>
+          </div>
+        </div>
+
+        <div class="exp-card reveal">
+          <div class="exp-card-bg"></div>
+          <div class="exp-server">soyzenitt.es</div>
+          <div class="exp-role">Builder personal</div>
+          <div class="exp-period">Marca propia · En activo</div>
+          <p class="exp-desc">
+            Construcción de identidad digital propia desde cero. 
+            Diseño web, branding y presencia online — todo bajo una misma marca 
+            que crece con cada proyecto.
+          </p>
+          <div class="exp-impact">
+            <span class="impact-pill">Branding propio</span>
+            <span class="impact-pill">Web design</span>
+            <span class="impact-pill">Identidad digital</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="gradient-line"></div>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container">
+      <div class="reveal">
+        <div class="section-label">Contacto</div>
+        <h2 class="section-title">¿Tienes un <em>proyecto</em>?</h2>
+      </div>
+      <div class="contact-wrap">
+        <div class="contact-info reveal">
+          <h3>Hablemos sin rodeos.</h3>
+          <p>
+            Si tienes una idea, una comunidad que necesita dirección, 
+            o una web que no existe todavía — escríbeme. 
+            Respondo rápido y voy al grano.
+          </p>
+          <div class="contact-links">
+            <a href="https://discord.com" target="_blank" class="contact-link">
+              <span class="contact-link-icon">
+                <!-- Chat bubble -->
+                <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+              </span>
+              <span class="contact-link-text">Discord · @zenitt</span>
+              <span class="contact-link-arrow">↗</span>
+            </a>
+            <a href="mailto:hola@soyzenitt.es" class="contact-link">
+              <span class="contact-link-icon">
+                <!-- Mail -->
+                <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </span>
+              <span class="contact-link-text">hola@soyzenitt.es</span>
+              <span class="contact-link-arrow">↗</span>
+            </a>
+            <a href="https://soyzenitt.es" class="contact-link">
+              <span class="contact-link-icon">
+                <!-- Globe -->
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              </span>
+              <span class="contact-link-text">soyzenitt.es</span>
+              <span class="contact-link-arrow">↗</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="reveal">
+          <form class="contact-form" id="contact-form">
+            <div class="form-group">
+              <label for="name">Nombre</label>
+              <input type="text" id="name" placeholder="Tu nombre" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email o Discord</label>
+              <input type="text" id="email" placeholder="tu@email.com o usuario#0000" required />
+            </div>
+            <div class="form-group">
+              <label for="subject">Asunto</label>
+              <input type="text" id="subject" placeholder="Web, comunidad, moderación..." />
+            </div>
+            <div class="form-group">
+              <label for="message">Mensaje</label>
+              <textarea id="message" placeholder="Cuéntame qué necesitas..." required></textarea>
+            </div>
+            <button type="submit" class="form-submit">Enviar mensaje</button>
+          </form>
+          <div class="form-success" id="form-success">
+            Mensaje recibido. Te respondo pronto.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div>
+      <div class="footer-brand"><span>Zenit</span></div>
+      <div class="footer-domain">soyzenitt.es</div>
+    </div>
+    <div class="footer-copy">
+      &copy; 2025 Zenit. Hecha con muchas horas online.<br>
+      <a href="https://soyzenitt.es">soyzenitt.es</a>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
