@@ -1,12 +1,12 @@
 /* privado.js — JS para la página privada de amigos */
 
 /* ── CURSOR ── */
-const dot  = document.getElementById('cursor-dot');
+const dot = document.getElementById('cursor-dot');
 const ring = document.getElementById('cursor-ring');
 let mx = 0, my = 0, rx = 0, ry = 0;
 document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
 function animCursor() {
-  dot.style.left  = mx + 'px'; dot.style.top  = my + 'px';
+  dot.style.left = mx + 'px'; dot.style.top = my + 'px';
   rx += (mx - rx) * 0.12; ry += (my - ry) * 0.12;
   ring.style.left = rx + 'px'; ring.style.top = ry + 'px';
   requestAnimationFrame(animCursor);
@@ -33,7 +33,7 @@ const msgSuccess = document.getElementById('msg-success');
 
 // Demo messages already in HTML; new ones added dynamically
 if (msgForm) {
-  msgForm.addEventListener('submit', function(e) {
+  msgForm.addEventListener('submit', function (e) {
     e.preventDefault();
     const name = document.getElementById('msg-name').value.trim();
     const text = document.getElementById('msg-text').value.trim();
@@ -54,5 +54,5 @@ if (msgForm) {
 }
 
 function escapeHtml(str) {
-  return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 }

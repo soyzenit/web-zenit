@@ -1,51 +1,53 @@
 /**
- * friends.js — Base de datos de acceso para amigos
- * Esta página es privada. No indexar.
+ * friends.js — Login via Supabase Auth
+ * Las contraseñas NUNCA tocan el cliente.
  */
 
-const FRIENDS_DB = {
-  gordinflas:   { password: 'lesbitasmaricon',         redirect: 'privado.html' },
-  dabpito:      { password: 'me gustafollartrans',     redirect: 'privado.html' },
-  churrita:     { password: 'mihermanitopequeño',      redirect: 'privado.html' },
-  mujerdemivida:{ password: 'teamocariño',             redirect: 'privado.html' },
-  lesbitas:     { password: 'uwupapurevamoscordoba',   redirect: 'privado.html' },
-};
+const SUPABASE_URL = 'https://favytgdyxhwkzhywscsp.supabase.co';
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZhdnl0Z2R5eGh3a3poeXdzY3NwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzc2NjI5NTksImV4cCI6MjA5MzIzODk1OX0.h-iBGUxU8oOIy9YlzQwx3y5WHAnbp2C-PXUt4w1Mk2w';
 
-function initFriendsLogin() {
-  const form     = document.getElementById('friends-form');
+document.addEventListener('DOMContentLoaded', () => {
+  const { createClient } = supabase;
+  const db = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+  const form = document.getElementById('friends-form');
   const userInput = document.getElementById('friends-user');
   const passInput = document.getElementById('friends-pass');
-  const errorEl  = document.getElementById('friends-error');
-  const btn      = document.getElementById('friends-btn');
+  const errorEl = document.getElementById('friends-error');
+  const btn = document.getElementById('friends-btn');
 
   if (!form) return;
 
-  form.addEventListener('submit', function(e) {
+  form.addEventListener('submit', async function (e) {
     e.preventDefault();
     errorEl.style.display = 'none';
 
-    const user = userInput.value.trim().toLowerCase();
-    const pass = passInput.value;
+    const email = userInput.value.trim();
+    const password = passInput.value;
 
-    if (!FRIENDS_DB[user]) {
-      showError('Usuario no encontrado.');
-      shake(userInput);
+    if (!email || !password) {
+      showError('Rellena todos los campos.');
       return;
     }
 
-    if (FRIENDS_DB[user].password !== pass) {
-      showError('Contraseña incorrecta.');
+    btn.textContent = 'Verificando...';
+    btn.style.opacity = '0.7';
+    btn.disabled = true;
+
+    const { data, error } = await db.auth.signInWithPassword({ email, password });
+
+    if (error) {
+      showError('Credenciales incorrectas. Pídeselas a Zenit.');
       shake(passInput);
       passInput.value = '';
+      btn.textContent = 'Entrar';
+      btn.style.opacity = '1';
+      btn.disabled = false;
       return;
     }
 
-    // Acceso correcto
     btn.textContent = 'Entrando...';
-    btn.style.opacity = '0.7';
-    setTimeout(() => {
-      window.location.href = FRIENDS_DB[user].redirect;
-    }, 600);
+    setTimeout(() => { window.location.href = 'privado.html'; }, 600);
   });
 
   function showError(msg) {
@@ -57,6 +59,4 @@ function initFriendsLogin() {
     el.classList.add('shake');
     setTimeout(() => el.classList.remove('shake'), 500);
   }
-}
-
-document.addEventListener('DOMContentLoaded', initFriendsLogin);
+});

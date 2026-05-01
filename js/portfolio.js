@@ -44,9 +44,9 @@ class Particle {
   }
   draw() {
     const progress = this.life / this.maxLife;
-    const a = this.alpha * (progress < 0.1 ? progress * 10 : progress > 0.9 ? (1-progress)*10 : 1);
+    const a = this.alpha * (progress < 0.1 ? progress * 10 : progress > 0.9 ? (1 - progress) * 10 : 1);
     ctx.beginPath();
-    ctx.arc(this.x, this.y, this.r, 0, Math.PI*2);
+    ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
     ctx.fillStyle = `rgba(168,85,247,${a})`;
     ctx.fill();
   }
@@ -56,12 +56,12 @@ function animParticles() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   particles.forEach(p => { p.update(); p.draw(); });
   for (let i = 0; i < particles.length; i++) {
-    for (let j = i+1; j < particles.length; j++) {
+    for (let j = i + 1; j < particles.length; j++) {
       const dx = particles[i].x - particles[j].x, dy = particles[i].y - particles[j].y;
-      const dist = Math.sqrt(dx*dx+dy*dy);
+      const dist = Math.sqrt(dx * dx + dy * dy);
       if (dist < 100) {
         ctx.beginPath();
-        ctx.strokeStyle = `rgba(168,85,247,${(1-dist/100)*0.08})`;
+        ctx.strokeStyle = `rgba(168,85,247,${(1 - dist / 100) * 0.08})`;
         ctx.lineWidth = 0.5;
         ctx.moveTo(particles[i].x, particles[i].y);
         ctx.lineTo(particles[j].x, particles[j].y);
@@ -85,8 +85,8 @@ document.querySelectorAll('.reveal').forEach((el, i) => {
 /* ── HOUR BLOCKS ── */
 const blocks = document.getElementById('hour-blocks');
 if (blocks) {
-  const activeHours = [18,19,20,21,22,23,0,1,14,15,16,17];
-  const peakHours = [20,21,22];
+  const activeHours = [18, 19, 20, 21, 22, 23, 0, 1, 14, 15, 16, 17];
+  const peakHours = [20, 21, 22];
   for (let h = 0; h < 24; h++) {
     const b = document.createElement('div');
     b.className = 'hour-block' + (peakHours.includes(h) ? ' peak' : activeHours.includes(h) ? ' on' : '');
@@ -98,7 +98,7 @@ if (blocks) {
 /* ── CONTACT FORM ── */
 const contactForm = document.getElementById('contact-form');
 if (contactForm) {
-  contactForm.addEventListener('submit', function(e) {
+  contactForm.addEventListener('submit', function (e) {
     e.preventDefault();
     this.style.display = 'none';
     document.getElementById('form-success').style.display = 'block';
