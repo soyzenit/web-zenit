@@ -4,11 +4,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rincón de Zenit — Solo para vosotros</title>
+  <title>rincón de zenit — solo para vosotros</title>
   <meta name="robots" content="noindex, nofollow" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="css/privado.css" />
+  <link rel="icon" type="image/png" href="img/flaticon.png">
 </head>
 
 <body>
@@ -30,7 +31,7 @@
     </div>
     <div class="priv-nav-links">
       <a href="#priv-mood">Sobre mí</a>
-      <a href="#priv-fotos">Fotos</a>
+      <a href="#priv-momentos">Momentos</a>
       <a href="#priv-mensajes">Mensajes</a>
       <a href="index.html" class="back-pub">← Web pública</a>
     </div>
@@ -45,7 +46,7 @@
         <span class="line-pink">no todo el mundo ve.</span>
       </h1>
       <p class="priv-hero-sub">
-        Si estás aquí es porque te quiero. Este es mi espacio sin filtros —
+        Si estás aquí es porque te quiero. Este es un rinconcito de mi corazón —
         mi música, mis fotos, mis cosas. Bienvenido/a.
       </p>
     </div>
@@ -70,14 +71,14 @@
             </div>
             <div>
               <div class="mood-card-label">// sobre mí</div>
-              <div class="mood-card-title">Hola, soy Zenit</div>
+              <div class="mood-card-title">Para vosotros soy Ari</div>
             </div>
           </div>
           <p class="mood-card-body">
-            Soy mujer, llevo años en internet y 6 moderando servidores.
-            Me encanta el caos ordenado: comunidades grandes, diseño que grita sin perder el control,
-            y la gente que aparece cada día aunque nadie les pague.
-            En esta parte de la web no hay marca, solo yo.
+            Quería dejaros un espacio en el que poder deciros que os quiero.
+            Me hacéis feliz cada día de mi vida,
+            y nunca os lo podré agradecer lo suficiente.
+            Así que esta parte es solo para vosotros, para que os sintáis más cerca de mí.
           </p>
         </div>
 
@@ -96,9 +97,10 @@
             </div>
           </div>
           <p class="mood-card-body">
-            Hiperpop a las 3am. Hyperpop en los videos. Hyperpop de fondo mientras trabajo.
-            Hay algo en esa energía que me conecta. También hay momentos de indie tranquilo, pero eso no lo digo en
-            público.
+            Los que me conocéis sabéis que me gusta toda la música. EXCEPTO EL TECHNO.
+            Hay algo en la música que siempre me ha hecho sentir diferente. Me flipa que
+            me enseñéis canciones nuevas que no conozco, o que me hagáis llorar con una canción que no conocía.
+            Siento que os puedo conocer mejor y que vosotros a mí también.
           </p>
         </div>
 
@@ -117,8 +119,9 @@
             </div>
           </div>
           <p class="mood-card-body">
-            Series, lore de comunidades, drama de internet que nunca debería haberme enganchado.
-            YouTube a velocidad 1.75. Siempre con algo de fondo.
+            Vídeos de policías en Estados Unidos, películas con giros de guión, las mismas batallas
+            de rap siempre, etc. Me gusta mucho ver vídeos de YouTube en el que hay que adivinar cosas
+            y competir con vosotros.
           </p>
         </div>
 
@@ -155,8 +158,8 @@
             </div>
           </div>
           <p class="mood-card-body">
-            Siempre con demasiadas cosas en la cabeza y pocas ganas de dormir a horas decentes.
-            Pero bien. Construyendo cosas que me gustan.
+            Últimamente tengo mucho estrés, muchas cosas en la cabeza, y muy pocas
+            ganas de hacer cualquier cosa. Pero os tengo a vosotros que me hacéis olvidarme de eso.
           </p>
         </div>
 
@@ -170,14 +173,14 @@
               </svg>
             </div>
             <div>
-              <div class="mood-card-label">// filosofía</div>
+              <div class="mood-card-label">// Pensamientos</div>
               <div class="mood-card-title">Lo que pienso de verdad</div>
             </div>
           </div>
           <p class="mood-card-body">
-            Internet es el lugar más raro y más honesto que existe. La gente se muestra tal cual cuando cree que nadie
-            mira.
-            Yo prefiero estar del lado de los que saben que siempre hay alguien mirando — y aun así son auténticos.
+            Sé que a veces soy rara, y que tengo mucho en la cabeza,
+            pero sobre todo soy muy feliz cuando estoy con vosotros.
+            Os quiero mucho, de verdad. No sé qué haría sin vosotros.
           </p>
         </div>
 
@@ -185,75 +188,301 @@
     </div>
   </section>
 
-  <!-- FOTOS -->
-  <section class="priv-section" id="priv-fotos">
+  <!-- ══════════════════════════════════════════════════════════════
+       MOMENTOS — sección con pestañas
+       ══════════════════════════════════════════════════════════════ -->
+  <section class="priv-section" id="priv-momentos">
     <div class="priv-container">
       <div class="reveal">
-        <div class="priv-label">Fotos</div>
-        <h2 class="priv-title">Mis <em>momentos</em>.</h2>
-        <p class="fotos-note">
-          // Sustituye las celdas vacías por tus propias fotos: cambia cada &lt;div class="foto-slot"&gt;
-          por un &lt;img&gt; con la ruta de tu imagen. Puedes hacer el slot .tall para que ocupe el doble de alto.
+        <div class="priv-label">Nuestros momentos</div>
+        <h2 class="priv-title">Lo que <em>somos</em>.</h2>
+      </div>
+
+      <!-- Pestañas de navegación -->
+      <div class="momentos-tabs reveal">
+        <button class="tab-btn active" data-tab="capturas">
+          <svg viewBox="0 0 24 24">
+            <rect x="3" y="3" width="18" height="18" rx="2" />
+            <circle cx="8.5" cy="8.5" r="1.5" />
+            <polyline points="21 15 16 10 5 21" />
+          </svg>
+          Capturas
+        </button>
+        <button class="tab-btn" data-tab="fotos">
+          <svg viewBox="0 0 24 24">
+            <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
+            <circle cx="12" cy="13" r="4" />
+          </svg>
+          Fotos nuestras
+        </button>
+        <button class="tab-btn" data-tab="canciones">
+          <svg viewBox="0 0 24 24">
+            <path d="M9 18V5l12-2v13" />
+            <circle cx="6" cy="18" r="3" />
+            <circle cx="18" cy="16" r="3" />
+          </svg>
+          Canciones
+        </button>
+        <button class="tab-btn" data-tab="spotify">
+          <svg viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10" />
+            <path d="M8 11.973c2.5-1.473 5.5-.973 7.5.527M7 15.073c3.5-1.8 7-.8 9.5 1.027M9.5 9.373c2-.9 5.5-1 8 1" />
+          </svg>
+          Playlist
+        </button>
+      </div>
+
+      <!-- ── PESTAÑA: CAPTURAS ─────────────────────────────────────
+           Cómo añadir capturas:
+           Sustituye cada <div class="foto-slot"> por:
+             <img src="img/capturas/nombre-archivo.jpg" alt="descripción" class="foto-img">
+           Pon tus imágenes en una carpeta img/capturas/
+           ──────────────────────────────────────────────────────── -->
+      <div class="tab-panel active" id="tab-capturas">
+        <p class="momentos-tip">
+          💡 Para añadir capturas: pon los archivos en <code>img/capturas/</code> y sustituye cada bloque vacío por
+          <code>&lt;img src="img/capturas/tu-foto.jpg" class="foto-img" alt="descripción"&gt;</code>
         </p>
+        <div class="fotos-grid">
+          <div class="foto-slot tall reveal">
+            <svg viewBox="0 0 24 24">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+              <circle cx="8.5" cy="8.5" r="1.5" />
+              <polyline points="21 15 16 10 5 21" />
+            </svg>
+            captura · tall
+          </div>
+          <div class="foto-slot reveal">
+            <svg viewBox="0 0 24 24">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+              <circle cx="8.5" cy="8.5" r="1.5" />
+              <polyline points="21 15 16 10 5 21" />
+            </svg>
+            captura
+          </div>
+          <div class="foto-slot reveal">
+            <svg viewBox="0 0 24 24">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+              <circle cx="8.5" cy="8.5" r="1.5" />
+              <polyline points="21 15 16 10 5 21" />
+            </svg>
+            captura
+          </div>
+          <div class="foto-slot reveal">
+            <svg viewBox="0 0 24 24">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+              <circle cx="8.5" cy="8.5" r="1.5" />
+              <polyline points="21 15 16 10 5 21" />
+            </svg>
+            captura
+          </div>
+          <div class="foto-slot reveal">
+            <svg viewBox="0 0 24 24">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+              <circle cx="8.5" cy="8.5" r="1.5" />
+              <polyline points="21 15 16 10 5 21" />
+            </svg>
+            captura
+          </div>
+          <div class="foto-slot tall reveal">
+            <svg viewBox="0 0 24 24">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+              <circle cx="8.5" cy="8.5" r="1.5" />
+              <polyline points="21 15 16 10 5 21" />
+            </svg>
+            captura · tall
+          </div>
+          <div class="foto-slot reveal">
+            <svg viewBox="0 0 24 24">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+              <circle cx="8.5" cy="8.5" r="1.5" />
+              <polyline points="21 15 16 10 5 21" />
+            </svg>
+            captura
+          </div>
+        </div>
       </div>
-      <div class="fotos-grid">
-        <div class="foto-slot tall reveal">
-          <svg viewBox="0 0 24 24">
-            <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
-            <circle cx="8.5" cy="8.5" r="1.5" />
-            <polyline points="21 15 16 10 5 21" />
-          </svg>
-          foto · tall
-        </div>
-        <div class="foto-slot reveal">
-          <svg viewBox="0 0 24 24">
-            <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
-            <circle cx="8.5" cy="8.5" r="1.5" />
-            <polyline points="21 15 16 10 5 21" />
-          </svg>
-          foto
-        </div>
-        <div class="foto-slot reveal">
-          <svg viewBox="0 0 24 24">
-            <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
-            <circle cx="8.5" cy="8.5" r="1.5" />
-            <polyline points="21 15 16 10 5 21" />
-          </svg>
-          foto
-        </div>
-        <div class="foto-slot reveal">
-          <svg viewBox="0 0 24 24">
-            <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
-            <circle cx="8.5" cy="8.5" r="1.5" />
-            <polyline points="21 15 16 10 5 21" />
-          </svg>
-          foto
-        </div>
-        <div class="foto-slot reveal">
-          <svg viewBox="0 0 24 24">
-            <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
-            <circle cx="8.5" cy="8.5" r="1.5" />
-            <polyline points="21 15 16 10 5 21" />
-          </svg>
-          foto
-        </div>
-        <div class="foto-slot tall reveal">
-          <svg viewBox="0 0 24 24">
-            <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
-            <circle cx="8.5" cy="8.5" r="1.5" />
-            <polyline points="21 15 16 10 5 21" />
-          </svg>
-          foto · tall
-        </div>
-        <div class="foto-slot reveal">
-          <svg viewBox="0 0 24 24">
-            <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
-            <circle cx="8.5" cy="8.5" r="1.5" />
-            <polyline points="21 15 16 10 5 21" />
-          </svg>
-          foto
+
+      <!-- ── PESTAÑA: FOTOS NUESTRAS ──────────────────────────────
+           Igual que capturas pero para fotos físicas/escaneadas.
+           Pon los archivos en img/fotos/ y sustituye los slots.
+           ──────────────────────────────────────────────────────── -->
+      <div class="tab-panel" id="tab-fotos">
+        <p class="momentos-tip">
+          💡 Para añadir fotos: pon los archivos en <code>img/fotos/</code> y sustituye cada bloque vacío por
+          <code>&lt;img src="img/fotos/tu-foto.jpg" class="foto-img" alt="descripción"&gt;</code>
+        </p>
+        <div class="fotos-grid">
+          <div class="foto-slot reveal">
+            <svg viewBox="0 0 24 24">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+              <circle cx="8.5" cy="8.5" r="1.5" />
+              <polyline points="21 15 16 10 5 21" />
+            </svg>
+            foto nuestra
+          </div>
+          <div class="foto-slot tall reveal">
+            <svg viewBox="0 0 24 24">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+              <circle cx="8.5" cy="8.5" r="1.5" />
+              <polyline points="21 15 16 10 5 21" />
+            </svg>
+            foto · tall
+          </div>
+          <div class="foto-slot reveal">
+            <svg viewBox="0 0 24 24">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+              <circle cx="8.5" cy="8.5" r="1.5" />
+              <polyline points="21 15 16 10 5 21" />
+            </svg>
+            foto nuestra
+          </div>
+          <div class="foto-slot reveal">
+            <svg viewBox="0 0 24 24">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+              <circle cx="8.5" cy="8.5" r="1.5" />
+              <polyline points="21 15 16 10 5 21" />
+            </svg>
+            foto nuestra
+          </div>
+          <div class="foto-slot reveal">
+            <svg viewBox="0 0 24 24">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+              <circle cx="8.5" cy="8.5" r="1.5" />
+              <polyline points="21 15 16 10 5 21" />
+            </svg>
+            foto nuestra
+          </div>
         </div>
       </div>
+
+      <!-- ── PESTAÑA: CANCIONES ───────────────────────────────────
+           Cómo añadir canciones:
+           Copia el bloque .cancion-card y rellena los datos.
+           Para el embed de Spotify, ve a la canción en Spotify,
+           haz clic en "..." → Compartir → Insertar → copia el src
+           del iframe (la parte que empieza con https://open.spotify...)
+           y pégala en el atributo data-src del .cancion-embed.
+           ──────────────────────────────────────────────────────── -->
+      <div class="tab-panel" id="tab-canciones">
+        <p class="momentos-tip">
+          💡 Para añadir una canción: rellena <code>data-titulo</code>, <code>data-artista</code>,
+          <code>data-quien</code> (quién la puso) y <code>data-src</code> con la URL del embed de Spotify de esa
+          canción.
+        </p>
+        <div class="canciones-grid">
+
+          <!-- EJEMPLO 1 — Edita estos atributos con los datos reales -->
+          <div class="cancion-card reveal" data-titulo="Nombre de la canción" data-artista="Artista"
+            data-quien="gordinflas" data-src="https://open.spotify.com/embed/track/TRACK_ID_AQUI?utm_source=generator">
+            <div class="cancion-header">
+              <div class="cancion-icon">♪</div>
+              <div>
+                <div class="cancion-titulo">Nombre de la canción</div>
+                <div class="cancion-artista">Artista</div>
+              </div>
+            </div>
+            <div class="cancion-quien">puesta por · gordinflas</div>
+            <button class="cancion-play-btn">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <polygon points="5 3 19 12 5 21 5 3" />
+              </svg>
+              Escuchar
+            </button>
+            <div class="cancion-embed-wrap" style="display:none;">
+              <iframe class="cancion-iframe" src="" frameborder="0"
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy"></iframe>
+            </div>
+          </div>
+
+          <!-- EJEMPLO 2 -->
+          <div class="cancion-card reveal" data-titulo="Nombre de la canción" data-artista="Artista"
+            data-quien="churrita" data-src="https://open.spotify.com/embed/track/TRACK_ID_AQUI?utm_source=generator">
+            <div class="cancion-header">
+              <div class="cancion-icon">♪</div>
+              <div>
+                <div class="cancion-titulo">Nombre de la canción</div>
+                <div class="cancion-artista">Artista</div>
+              </div>
+            </div>
+            <div class="cancion-quien">puesta por · churrita</div>
+            <button class="cancion-play-btn">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <polygon points="5 3 19 12 5 21 5 3" />
+              </svg>
+              Escuchar
+            </button>
+            <div class="cancion-embed-wrap" style="display:none;">
+              <iframe class="cancion-iframe" src="" frameborder="0"
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy"></iframe>
+            </div>
+          </div>
+
+          <!-- EJEMPLO 3 -->
+          <div class="cancion-card reveal" data-titulo="Nombre de la canción" data-artista="Artista"
+            data-quien="lesbitas" data-src="https://open.spotify.com/embed/track/TRACK_ID_AQUI?utm_source=generator">
+            <div class="cancion-header">
+              <div class="cancion-icon">♪</div>
+              <div>
+                <div class="cancion-titulo">Nombre de la canción</div>
+                <div class="cancion-artista">Artista</div>
+              </div>
+            </div>
+            <div class="cancion-quien">puesta por · lesbitas</div>
+            <button class="cancion-play-btn">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <polygon points="5 3 19 12 5 21 5 3" />
+              </svg>
+              Escuchar
+            </button>
+            <div class="cancion-embed-wrap" style="display:none;">
+              <iframe class="cancion-iframe" src="" frameborder="0"
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy"></iframe>
+            </div>
+          </div>
+
+          <!-- Para añadir más canciones, copia uno de los bloques anteriores y edita los datos -->
+
+        </div>
+      </div>
+
+      <!-- ── PESTAÑA: PLAYLIST ────────────────────────────────────
+           Cómo incrustar la playlist compartida de Spotify:
+           1. Abre la playlist en Spotify
+           2. Haz clic en "..." → Compartir → Insertar playlist
+           3. Copia el enlace del iframe (empieza por https://open.spotify.com/embed/playlist/...)
+           4. Pégalo abajo donde dice PLAYLIST_ID_AQUI
+           ──────────────────────────────────────────────────────── -->
+      <div class="tab-panel" id="tab-spotify">
+        <div class="spotify-wrap reveal">
+          <div class="spotify-header">
+            <svg class="spotify-logo" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5" />
+              <path d="M8 11.973c2.5-1.473 5.5-.973 7.5.527" stroke="currentColor" stroke-width="1.5"
+                stroke-linecap="round" />
+              <path d="M7 15.073c3.5-1.8 7-.8 9.5 1.027" stroke="currentColor" stroke-width="1.5"
+                stroke-linecap="round" />
+              <path d="M9.5 9.373c2-.9 5.5-1 8 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+            </svg>
+            <div>
+              <div class="spotify-title">Nuestra playlist</div>
+              <div class="spotify-sub">las canciones que nos representan</div>
+            </div>
+          </div>
+          <!--
+            CAMBIA la URL de abajo por la de tu playlist:
+            Spotify → playlist → "..." → Compartir → Insertar playlist → copia el src
+          -->
+          <iframe class="spotify-iframe"
+            src="https://open.spotify.com/embed/playlist/PLAYLIST_ID_AQUI?utm_source=generator&theme=0" frameborder="0"
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
+          </iframe>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -289,6 +518,17 @@
               <label for="msg-name">Tu nombre</label>
               <input type="text" id="msg-name" placeholder="quién eres tú" autocomplete="off" />
             </div>
+
+            <!--
+              MENSAJITO PERSONALIZADO
+              Aparece automáticamente cuando el amigo escribe su apodo.
+              Los mensajes se editan en privado.js → MENSAJES_PRIVADOS.
+            -->
+            <div class="msg-personal" id="msg-personal" style="display:none;">
+              <div class="msg-personal-from">// para ti, de Ari</div>
+              <div class="msg-personal-text" id="msg-personal-text"></div>
+            </div>
+
             <div class="msg-group">
               <label for="msg-text">Mensaje</label>
               <textarea id="msg-text" placeholder="deja algo bonito..."></textarea>
@@ -304,7 +544,7 @@
 
   <!-- FOOTER -->
   <footer class="priv-footer">
-    <div class="priv-footer-brand">Zenit · Zona privada</div>
+    <div class="priv-footer-brand">Ari · Zona privada</div>
     <div class="priv-footer-copy">Solo para las personas que importan.</div>
   </footer>
 

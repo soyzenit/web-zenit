@@ -424,23 +424,102 @@ section.priv-section {
   grid-column: span 2;
 }
 
-/* ── PHOTOS PLACEHOLDER ── */
-#priv-fotos {
+/* ══════════════════════════════════════════════════════════════
+   MOMENTOS — pestañas
+   ══════════════════════════════════════════════════════════════ */
+#priv-momentos {
   background: var(--dark3);
 }
 
-.fotos-note {
+/* ── Barra de pestañas ── */
+.momentos-tabs {
+  display: flex;
+  gap: 8px;
+  margin-top: 40px;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+}
+
+.tab-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: 1px solid rgba(244, 114, 182, 0.15);
+  background: var(--glass);
+  color: rgba(255, 255, 255, 0.4);
   font-family: var(--font-mono);
-  font-size: 0.8rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  cursor: none;
+  transition: all 0.2s;
+}
+
+.tab-btn svg {
+  width: 14px;
+  height: 14px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  flex-shrink: 0;
+}
+
+.tab-btn:hover {
+  color: rgba(255, 255, 255, 0.7);
+  border-color: rgba(244, 114, 182, 0.3);
+}
+
+.tab-btn.active {
+  background: rgba(244, 114, 182, 0.1);
+  border-color: rgba(244, 114, 182, 0.5);
+  color: var(--pink);
+}
+
+/* ── Paneles de contenido ── */
+.tab-panel {
+  display: none;
+  animation: tabIn 0.3s ease both;
+}
+
+.tab-panel.active {
+  display: block;
+}
+
+@keyframes tabIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Nota de instrucciones ── */
+.momentos-tip {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
   color: rgba(255, 255, 255, 0.3);
-  margin-top: 16px;
-  margin-bottom: 40px;
+  margin-bottom: 28px;
   border: 1px dashed rgba(168, 85, 247, 0.2);
   border-radius: 10px;
   padding: 14px 18px;
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
+.momentos-tip code {
+  background: rgba(168, 85, 247, 0.1);
+  border-radius: 4px;
+  padding: 1px 6px;
+  color: var(--p200);
+}
+
+/* ── Grid de fotos (compartido capturas / fotos) ── */
 .fotos-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -484,7 +563,164 @@ section.priv-section {
   aspect-ratio: unset;
 }
 
-/* ── MENSAJES / GUESTBOOK ── */
+/* Cuando el slot sea una imagen real */
+.foto-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+}
+
+/* ── Grid de canciones ── */
+.canciones-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.cancion-card {
+  background: var(--glass);
+  border: 1px solid rgba(244, 114, 182, 0.12);
+  border-radius: 14px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: border-color 0.3s, transform 0.3s;
+}
+
+.cancion-card:hover {
+  border-color: rgba(244, 114, 182, 0.35);
+  transform: translateY(-3px);
+}
+
+.cancion-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.cancion-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: rgba(244, 114, 182, 0.08);
+  border: 1px solid rgba(244, 114, 182, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  color: var(--pink);
+  flex-shrink: 0;
+}
+
+.cancion-titulo {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.cancion-artista {
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.4);
+  font-weight: 300;
+  margin-top: 2px;
+}
+
+.cancion-quien {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--pink);
+  letter-spacing: 0.08em;
+  opacity: 0.7;
+}
+
+.cancion-play-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 14px;
+  border-radius: 8px;
+  border: 1px solid rgba(244, 114, 182, 0.25);
+  background: rgba(244, 114, 182, 0.05);
+  color: var(--pink);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  cursor: none;
+  transition: background 0.2s, border-color 0.2s;
+  align-self: flex-start;
+}
+
+.cancion-play-btn svg {
+  width: 12px;
+  height: 12px;
+}
+
+.cancion-play-btn:hover {
+  background: rgba(244, 114, 182, 0.12);
+  border-color: var(--pink);
+}
+
+.cancion-embed-wrap {
+  margin-top: 4px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.cancion-iframe {
+  width: 100%;
+  height: 80px;
+  border-radius: 10px;
+  display: block;
+}
+
+/* ── Spotify playlist embed ── */
+.spotify-wrap {
+  background: var(--glass);
+  border: 1px solid rgba(244, 114, 182, 0.12);
+  border-radius: 16px;
+  padding: 28px;
+}
+
+.spotify-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.spotify-logo {
+  width: 40px;
+  height: 40px;
+  color: #1DB954;
+  flex-shrink: 0;
+}
+
+.spotify-title {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.spotify-sub {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: rgba(255, 255, 255, 0.3);
+  margin-top: 3px;
+}
+
+.spotify-iframe {
+  width: 100%;
+  height: 380px;
+  border-radius: 12px;
+  display: block;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   MENSAJES / GUESTBOOK
+   ══════════════════════════════════════════════════════════════ */
 #priv-mensajes {
   background: var(--dark2);
 }
@@ -531,8 +767,33 @@ section.priv-section {
   font-style: italic;
 }
 
-.msg-form-wrap {}
+/* ── Mensajito personalizado ── */
+.msg-personal {
+  background: linear-gradient(135deg, rgba(244, 114, 182, 0.07), rgba(147, 51, 234, 0.04));
+  border: 1px solid rgba(244, 114, 182, 0.25);
+  border-radius: 12px;
+  padding: 16px 18px;
+  animation: fadeUp 0.4s ease both;
+}
 
+.msg-personal-from {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--pink);
+  letter-spacing: 0.1em;
+  margin-bottom: 8px;
+  opacity: 0.7;
+}
+
+.msg-personal-text {
+  font-size: 0.92rem;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.65;
+  font-weight: 300;
+  font-style: italic;
+}
+
+/* ── Formulario ── */
 .msg-form {
   display: flex;
   flex-direction: column;
@@ -660,6 +921,10 @@ footer.priv-footer {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .canciones-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
   .mensajes-wrap {
     grid-template-columns: 1fr;
   }
@@ -680,5 +945,18 @@ footer.priv-footer {
 
   .foto-slot.tall {
     grid-row: span 1;
+  }
+
+  .canciones-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .momentos-tabs {
+    gap: 6px;
+  }
+
+  .tab-btn {
+    padding: 8px 14px;
+    font-size: 0.7rem;
   }
 }
