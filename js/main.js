@@ -132,6 +132,33 @@ const statusEl = document.getElementById('lanyard-status');
 const spotifyWrap = document.getElementById('spotify-wrap');
 const spotifyTrack = document.getElementById('spotify-track');
 const spotifyArtist = document.getElementById('spotify-artist');
+const spotifyArt = document.getElementById('spotify-art');
+const spotifyFill = document.getElementById('spotify-progress-fill');
+const spotifyTimeCur = document.getElementById('spotify-time-cur');
+const spotifyTimeEnd = document.getElementById('spotify-time-end');
+const spotifyLabel = document.querySelector('.spotify-label');
+const spotifyWaveEl = document.getElementById('spotify-wave');
+
+let spotifyTimestamps = null;
+let progressInterval = null;
+let lastSpotify = null;
+
+function formatMs(ms) {
+  const total = Math.max(0, Math.floor(ms / 1000));
+  const m = Math.floor(total / 60);
+  const s = total % 60;
+  return `${m}:${String(s).padStart(2, '0')}`;
+}
+
+function tickProgress() {
+  if (!spotifyTimestamps) return;
+  const elapsed = Date.now() - spotifyTimestamps.start;
+  const total = spotifyTimestamps.end - spotifyTimestamps.start;
+  const pct = Math.min(100, Math.max(0, (elapsed / total) * 100));
+  spotifyFill.style.width = pct + '%';
+  spotifyTimeCur.textContent = formatMs(elapsed);
+  spotifyTimeEnd.textContent = formatMs(total);
+}
 
 // hero elements
 const heroDot = document.getElementById('hero-dot');
@@ -170,11 +197,34 @@ function renderStatus(data) {
 
   /* — spotify strip — */
   if (data.spotify && data.listening_to_spotify) {
+    lastSpotify = data.spotify;
     spotifyTrack.textContent = data.spotify.song || '—';
     spotifyArtist.textContent = data.spotify.artist || '—';
+    spotifyArt.src = data.spotify.album_art_url || '';
+    spotifyTimestamps = data.spotify.timestamps || null;
+    spotifyLabel.textContent = 'escuchando ahora';
+    spotifyWaveEl.classList.remove('paused');
     spotifyWrap.style.display = 'block';
+    clearInterval(progressInterval);
+    tickProgress();
+    progressInterval = setInterval(tickProgress, 1000);
   } else {
-    spotifyWrap.style.display = 'none';
+    spotifyTimestamps = null;
+    clearInterval(progressInterval);
+    progressInterval = null;
+    if (lastSpotify) {
+      spotifyTrack.textContent = lastSpotify.song || '—';
+      spotifyArtist.textContent = lastSpotify.artist || '—';
+      spotifyArt.src = lastSpotify.album_art_url || '';
+      spotifyLabel.textContent = 'última escuchada';
+      spotifyWaveEl.classList.add('paused');
+      spotifyFill.style.width = '100%';
+      spotifyTimeCur.textContent = '—';
+      spotifyTimeEnd.textContent = '—';
+      spotifyWrap.style.display = 'block';
+    } else {
+      spotifyWrap.style.display = 'none';
+    }
   }
 }
 

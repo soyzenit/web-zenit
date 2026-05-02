@@ -704,10 +704,11 @@ body:has(button:hover) #cursor-ring {
   gap: 10px;
 }
 
-.spotify-ico {
-  width: 20px;
-  height: 20px;
-  color: #1db954;
+.spotify-art {
+  width: 44px;
+  height: 44px;
+  border-radius: 6px;
+  object-fit: cover;
   flex-shrink: 0;
 }
 
@@ -740,6 +741,34 @@ body:has(button:hover) #cursor-ring {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.spotify-progress-wrap {
+  margin-top: 10px;
+}
+
+.spotify-progress-bar {
+  height: 3px;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+  margin-bottom: 4px;
+}
+
+.spotify-progress-fill {
+  height: 100%;
+  background: #1db954;
+  border-radius: 2px;
+  transition: width 0.8s linear;
+  width: 0%;
+}
+
+.spotify-times {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  color: rgba(255, 255, 255, 0.22);
 }
 
 .spotify-wave {
@@ -789,6 +818,12 @@ body:has(button:hover) #cursor-ring {
     transform: scaleY(1);
     opacity: 1;
   }
+}
+
+.spotify-wave.paused span {
+  animation-play-state: paused;
+  transform: scaleY(0.3);
+  opacity: 0.25;
 }
 
 /* ── RELOJ ── */
@@ -898,12 +933,10 @@ body:has(button:hover) #cursor-ring {
   position: absolute;
   bottom: 16px;
   right: 20px;
-  font-size: 4rem;
-  font-weight: 900;
-  font-family: var(--font-display);
+  width: 80px;
+  height: 80px;
   color: rgba(168, 85, 247, 0.07);
   pointer-events: none;
-  line-height: 1;
 }
 
 .cta-deco--pink {
@@ -940,7 +973,17 @@ body:has(button:hover) #cursor-ring {
 }
 
 .stack-icon {
-  font-size: 1rem;
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  color: var(--p400);
+  display: flex;
+  align-items: center;
+}
+
+.stack-icon svg {
+  width: 18px;
+  height: 18px;
 }
 
 /* ── PROYECTOS ACTIVOS ── */
